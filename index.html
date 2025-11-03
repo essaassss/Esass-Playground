@@ -1,3 +1,44 @@
-test....
-<!-- add an image -->
-<img src="images/test.png" alt="image" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Revu Header</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <h1>revu</h1>
+      <span class="underline"></span>
+    </div>
+
+    <!-- Hamburger icon (hidden on desktop) -->
+    <div class="hamburger" id="hamburger">
+      &#9776;
+    </div>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#">How it works</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <div class="auth-buttons">
+      <button class="login-btn">Log in</button>
+      <button class="signup-btn">Sign Up</button>
+    </div>
+  </header>
+
+  <script>
+    // simple mobile toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>

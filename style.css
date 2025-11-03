@@ -124,6 +124,11 @@ body {
     display: block;
     align-self: flex-end;
   }
+  .hamburger.open {
+  transform: rotate(90deg);
+  color: #e16059;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
 
   /* Start hidden with smooth transition */
   .nav-links {

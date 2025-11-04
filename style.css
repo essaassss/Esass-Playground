@@ -294,3 +294,108 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* HOW IT WORKS SECTION */
+.how-it-works {
+  text-align: center;
+  padding: 80px 20px;
+  background-color: #F9FAFB; /* matches hero background tone */
+  color: #4C5C68;
+  font-family: 'Inter', sans-serif; /* same as header */
+}
+
+.how-it-works h2 {
+  font-size: 2rem;
+  color: #1F2933; /* dark steel */
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.how-it-works .subtitle {
+  color: #6B7280;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 60px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.step {
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  padding: 30px 20px;
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  background-color: #FFD9CB; /* blush highlight */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.icon-circle img {
+  width: 36px;
+  height: 36px;
+}
+
+.step h3 {
+  font-size: 1.1rem;
+  color: #1F2933;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.step p {
+  color: #4C5C68;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* CTA button matches header */
+.cta {
+  background-color: #EC6A5E; /* blush red accent */
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 60px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.cta:hover {
+  background-color: #D95C52; /* slightly darker blush */
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+}

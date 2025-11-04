@@ -260,6 +260,106 @@
     </div>
   </div>
 </section>
+<!-- Testimonial / Success Stories -->
+<section class="success-stories" id="success-stories">
+  <div class="ss-container">
+    <h2>Our Success Stories</h2>
+
+    <div class="testimonial-wrap" data-ss>
+      <!-- Slides -->
+      <figure class="testimonial-card is-active" role="group" aria-roledescription="slide">
+        <blockquote>
+          “I never thought a website could make me feel heard. Revu walked me through every confusing form… For the first time, I’m excited about my future again.”
+        </blockquote>
+        <figcaption>Maria R., Los Angeles, CA</figcaption>
+      </figure>
+
+      <figure class="testimonial-card" role="group" aria-roledescription="slide" hidden>
+        <blockquote>
+          “Revu made a complicated process simple. Upload, review, track—done. The status updates kept my nerves in check.”
+        </blockquote>
+        <figcaption>Jordan P., Sacramento, CA</figcaption>
+      </figure>
+
+      <figure class="testimonial-card" role="group" aria-roledescription="slide" hidden>
+        <blockquote>
+          “I felt stuck for years. With Revu, I finally saw progress. I wish I’d found this sooner.”
+        </blockquote>
+        <figcaption>Alejandro G., Fresno, CA</figcaption>
+      </figure>
+
+      <!-- Right-side badge image -->
+      <img
+        class="testimonial-badge"
+        src="images/card.png"
+        alt="Testimonial badge"
+      />
+    </div>
+
+    <!-- Dots -->
+    <div class="ss-dots" role="tablist" aria-label="Testimonial slides">
+      <button class="dot active" role="tab" aria-selected="true" aria-controls="slide-1" data-index="0">
+        <span class="visually-hidden">Slide 1</span>
+      </button>
+      <button class="dot" role="tab" aria-selected="false" aria-controls="slide-2" data-index="1">
+        <span class="visually-hidden">Slide 2</span>
+      </button>
+      <button class="dot" role="tab" aria-selected="false" aria-controls="slide-3" data-index="2">
+        <span class="visually-hidden">Slide 3</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Place this <script> just before </body> -->
+<script>
+(() => {
+  const root = document.querySelector('[data-ss]');
+  const slides = Array.from(root.querySelectorAll('.testimonial-card'));
+  const dots = Array.from(document.querySelectorAll('.ss-dots .dot'));
+
+  function setActive(index) {
+    slides.forEach((slide, i) => {
+      const active = i === index;
+      slide.classList.toggle('is-active', active);
+      slide.toggleAttribute('hidden', !active);
+    });
+    dots.forEach((dot, i) => {
+      const active = i === index;
+      dot.classList.toggle('active', active);
+      dot.setAttribute('aria-selected', active ? 'true' : 'false');
+      dot.tabIndex = active ? 0 : -1;
+    });
+    current = index;
+  }
+
+  // Click handling
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => setActive(+dot.dataset.index));
+    dot.addEventListener('keydown', (e) => {
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        setActive(+dot.dataset.index);
+      }
+    });
+  });
+
+  // Arrow-key nav on the tablist
+  const tablist = document.querySelector('.ss-dots');
+  let current = 0;
+  tablist.addEventListener('keydown', (e) => {
+    if (!['ArrowLeft','ArrowRight'].includes(e.key)) return;
+    e.preventDefault();
+    const dir = e.key === 'ArrowRight' ? 1 : -1;
+    const next = (current + dir + slides.length) % slides.length;
+    setActive(next);
+    dots[next].focus();
+  });
+
+  // Init
+  setActive(0);
+})();
+</script>
 
 
   <script>

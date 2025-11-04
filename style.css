@@ -344,18 +344,18 @@ body {
 .icon-circle {
   width: 70px;
   height: 70px;
-  background-color: #FFD9CB; /* blush highlight */
+  background-color: #FFFAFA; /* blush highlight */
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .icon-circle img {
-  width: 36px;
-  height: 36px;
+  width: 60px;
+  height: 60px;
 }
 
 .step h3 {

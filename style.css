@@ -425,7 +425,7 @@ body {
   align-items: center;
   background: linear-gradient(
     180deg,
-    rgba(247, 198, 199, 0.1) 0%,
+    rgba(247, 198, 199, 0.20) 0%,
     rgba(247, 198, 199, 0) 60%
   );
   padding: clamp(20px, 4vw, 48px);

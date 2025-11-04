@@ -399,3 +399,91 @@ body {
     align-items: center;
   }
 }
+/* ---------------------- */
+/* WHY WE EXIST SECTION   */
+/* ---------------------- */
+
+:root{
+  --blush: #FFD9CB;     /* soft blush pink */
+  --powder: #D3E9F8;    /* light powder blue */
+  --steel: #64748B;     /* slate steel accent */
+  --ink: #0F172A;       /* dark heading color */
+  --body: #334155;      /* body text color */
+  --card: #FFFFFF;
+}
+
+.container{
+  max-width: 1100px;
+  margin-inline: auto;
+  padding: clamp(16px, 3vw, 32px);
+}
+
+.why{
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+  background: linear-gradient(180deg, var(--powder, #D3E9F8) 0%, rgba(211,233,248,0) 40%);
+  border-radius: 20px;
+  padding: clamp(20px, 4vw, 48px);
+}
+
+.why__art{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card);
+  border: 1px solid rgba(100,116,139,.18);
+  border-radius: 16px;
+  padding: clamp(12px, 2.5vw, 24px);
+  box-shadow: 0 10px 30px rgba(15,23,42,.08);
+  min-height: 260px;
+}
+
+.why__art img{
+  width: 100%;
+  height: auto;
+  max-width: 420px;
+}
+
+.why__body h1{
+  font-weight: 700;
+  font-size: clamp(24px, 3.2vw, 36px);
+  line-height: 1.2;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+
+.why__kicker{
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--steel);
+  background: var(--blush);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+.why__body p{
+  color: var(--body);
+  font-weight: 400;
+  font-size: clamp(15px, 1.6vw, 16.5px);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  max-width: 60ch;
+}
+
+.why__body p + p {
+  margin-top: 0.6rem;
+}
+
+/* Stack columns on mobile */
+@media (max-width: 820px) {
+  .why {
+    grid-template-columns: 1fr;
+  }
+  .why__art {
+    order: -1; /* puts image on top */
+  }
+}

@@ -734,85 +734,105 @@ body {
   --shadow:0 10px 30px rgba(16,24,40,.07);
 }
 
-.success-stories{
-  background: var(--page);
+/* ---------- Success Stories ---------- */
+.success-stories {
+  background: var(--page, #FFF7F6);
   padding: clamp(48px, 8vw, 96px) 20px;
-}
-
-.ss-container{
-  max-width: 980px;
-  margin: 0 auto;
   text-align: center;
 }
 
-.success-stories h2{
-  font-size: clamp(22px, 2.4vw, 32px);
-  font-weight: 700;
-  color: var(--ink);
-  margin: 0 0 28px;
-}
-
-.testimonial-wrap{
-  position: relative;
-  display: grid;
-  align-items: center;
-  justify-content: center;
-}
-
-.testimonial-card{
-  background: var(--card);
-  border: 2px solid rgba(236,91,91,.10);
-  box-shadow: var(--shadow);
-  border-radius: 14px;
-  padding: clamp(18px, 3.5vw, 32px);
-  text-align: left;
-  max-width: 720px;
+.ss-container {
+  max-width: 980px;
   margin: 0 auto;
 }
 
-.testimonial-card blockquote{
-  margin: 0 0 18px 0;
-  line-height: 1.6;
-  color: var(--muted);
-  font-size: clamp(14px, 1.3vw, 16px);
+.success-stories h2 {
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 700;
+  color: var(--ink, #0F172A);
+  margin-bottom: 36px;
 }
 
-.testimonial-card figcaption{
-  color: var(--accent);
+/* Layout */
+.testimonial-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 5vw, 60px);
+  flex-wrap: wrap;
+}
+
+/* Testimonial box */
+.testimonial-card {
+  background: #fff;
+  border: 2px solid rgba(236, 91, 91, 0.1);
+  box-shadow: 0 10px 30px rgba(16, 24, 40, 0.07);
+  border-radius: 14px;
+  padding: clamp(18px, 3.5vw, 32px);
+  text-align: left;
+  max-width: 600px;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card blockquote {
+  margin: 0 0 18px;
+  line-height: 1.6;
+  color: var(--muted, #475569);
+  font-size: clamp(14px, 1.3vw, 16px);
+  transition: opacity 0.3s ease;
+}
+
+.testimonial-card figcaption {
+  color: var(--accent, #EC5B5B);
   font-weight: 700;
   font-size: 14px;
+  transition: opacity 0.3s ease;
 }
 
-/* Right-side badge image */
-.testimonial-badge{
-  position: absolute;
-  right: -24px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: clamp(140px, 22vw, 220px);
+/* Static image on the side */
+.testimonial-badge {
+  width: clamp(160px, 25vw, 220px);
   height: auto;
-  pointer-events: none;
-  /* subtle glow so it feels anchored to the card */
-  filter: drop-shadow(0 6px 14px rgba(16,24,40,.12));
+  flex-shrink: 0;
+  filter: drop-shadow(0 6px 14px rgba(16, 24, 40, 0.12));
 }
 
 /* Dots */
-.ss-dots{
+.ss-dots {
   display: flex;
-  gap: 8px;
   justify-content: center;
-  margin-top: 18px;
-}
-.ss-dots .dot{
-  width: 8px;
-  height: 8px;
-  border-radius: 999px;
-  background: #cfe2ef;
-}
-.ss-dots .dot.active{
-  background: var(--powder);
+  gap: 10px;
+  margin-top: 24px;
 }
 
+.ss-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #cfe2ef;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.ss-dots .dot.active {
+  background: var(--powder, #D3E9F8);
+}
+
+.ss-dots .dot:hover {
+  background: var(--powder, #D3E9F8);
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .testimonial-layout {
+    flex-direction: column;
+  }
+
+  .testimonial-badge {
+    margin-top: 16px;
+  }
+}
 /* ---------- Responsive tweaks ---------- */
 @media (max-width: 720px){
   .testimonial-badge{
@@ -825,25 +845,8 @@ body {
     gap: 10px;
   }
 }
-/* carry over the previous styles… add/adjust these */
-.testimonial-card{ transition: opacity .25s ease; }
-.testimonial-card.is-active{ opacity: 1; }
-.testimonial-card[hidden]{ opacity: 0; }
 
-/* Dots as buttons */
-.ss-dots{ display:flex; gap:8px; justify-content:center; margin-top:18px; }
-.ss-dots .dot{
-  width:10px; height:10px; border-radius:999px; border:none; cursor:pointer;
-  background:#cfe2ef;
-}
-.ss-dots .dot.active{ background: var(--powder); }
-.ss-dots .dot:focus-visible{ outline: 2px solid var(--accent); outline-offset: 2px; }
 
-/* a11y helper */
-.visually-hidden{
-  position:absolute!important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
-  clip:rect(0 0 0 0); white-space:nowrap; border:0;
-}
 /* ===== Sign Up Section ===== */
 :root{
   --powder: #D3E9F8;        /* site light blue */
